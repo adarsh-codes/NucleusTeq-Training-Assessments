@@ -30,7 +30,7 @@ h1 {
     color: black;
 }
 
-.categorydiv, .difficultydiv {
+.categorydiv, .difficultydiv, .numberdiv {
     display: flex;
     align-items: center;
     gap: 10px; 
@@ -198,6 +198,7 @@ select{
 
 #next-btn {
     margin-top: 20px;
+    margin-bottom: 50px;
     background: #E67E22; 
     color: #FFFFFF;
     padding: 10px;
@@ -206,10 +207,10 @@ select{
     border-radius: 5px;
     cursor: pointer;
     display: none;
-    z-index: auto;
-    margin: 20px auto;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     overflow-y: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
@@ -227,4 +228,9 @@ select{
         font-size: 14px;
         padding: 8px;
     }
+}
+
+#score-display{
+    font-family: sans-serif;
+    font-size: 30px;
 }

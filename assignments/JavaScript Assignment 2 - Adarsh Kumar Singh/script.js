@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch((error) => console.error("Error fetching categories:", error));
 });
 
-// CODE FOR STARTING THE QUIZ
+
 
 let currentQuestionIndex = 0;
 let questions = [];
@@ -35,19 +35,20 @@ const optionLabels = ["A", "B", "C", "D"];
 async function fun() {
   let category = document.getElementById("categorybox").value;
   let difficulty = document.getElementById("difficultybox").value;
+  let num = document.getElementById("numberbox").value;
 
   document.getElementsByClassName("container")[0].style.display = "none";
   document.getElementsByClassName("question-container")[0].style.display =
     "block";
 
-  let apiurl = `https://opentdb.com/api.php?amount=20&category=${category}&difficulty=${difficulty}&type=multiple`;
+  let apiurl = `https://opentdb.com/api.php?amount=${num}&category=${category}&difficulty=${difficulty}&type=multiple`;
 
   if (category == "All" && difficulty == "All") {
-    apiurl = `https://opentdb.com/api.php?amount=20&type=multiple`;
+    apiurl = `https://opentdb.com/api.php?amount=${num}&type=multiple`;
   } else if (difficulty == "All") {
-    apiurl = `https://opentdb.com/api.php?amount=20&category=${category}&type=multiple`;
+    apiurl = `https://opentdb.com/api.php?amount=${num}&category=${category}&type=multiple`;
   } else if (category == "All") {
-    apiurl = `https://opentdb.com/api.php?amount=20&difficulty=${difficulty}&type=multiple`;
+    apiurl = `https://opentdb.com/api.php?amount=${num}&difficulty=${difficulty}&type=multiple`;
   }
 
   try {
@@ -67,9 +68,10 @@ function showQuestion() {
   let questionElement = document.getElementById("question-text");
   let answerButtons = document.getElementById("answer-buttons");
   let scoreDisplay = document.getElementById("score-display");
+  let num = document.getElementById("numberbox").value;
 
-  questionElement.innerHTML = currentQuestion.question;
-  scoreDisplay.innerHTML = `Score: ${score}`;
+  questionElement.innerHTML = `Q${currentQuestionIndex + 1}: ${currentQuestion.question}`;
+  scoreDisplay.innerHTML = `Score: ${score}/${num}`;
 
   let answers = [
     ...currentQuestion.incorrect_answers,
@@ -138,12 +140,12 @@ function selectAnswer(button, correctAnswer) {
 
   if (isCorrect) {
     button.classList.add("correct");
-    feedbackElement.innerText = "✅ Correct! 🎉";
+    feedbackElement.innerText = "\u{2714} Correct! \u{1F389}";
     feedbackElement.className = "correct";
     score++;
   } else {
     button.classList.add("wrong");
-    feedbackElement.innerText = `❌ Wrong! The correct answer was: ${correctAnswer}`;
+    feedbackElement.innerText = `\u{274C} Wrong! The correct answer was: ${correctAnswer}`;
     feedbackElement.className = "wrong";
   }
 
@@ -163,7 +165,7 @@ function resetState() {
   document.getElementById("next-btn").style.display = "none";
 
   let feedbackElement = document.getElementById("feedback");
-  feedbackElement.innerText = "🟡 Select an answer";
+  feedbackElement.innerText = "\u{1F7E1} Select an answer";
   feedbackElement.className = "";
 }
 
@@ -178,8 +180,8 @@ function nextQuestion() {
 
 function showFinalScore() {
   document.getElementsByClassName("question-container")[0].innerHTML = `
-        <h2>Quiz Completed!</h2>
-        <p>Your Final Score: ${score} / ${questions.length}</p>
+        <h1>Quiz Completed!</h1>
+        <h2>Your Final Score: ${score} / ${questions.length}</h2>
         <button onclick="location.reload()">Play Again</button>
     `;
 }
