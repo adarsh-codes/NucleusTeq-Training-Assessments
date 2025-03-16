@@ -1,0 +1,58 @@
+Primitive types hold simple values and are stored directly in memory. Java has 8 primitive data types:
+
+
+byte -		1 byte
+short -		2 bytes
+int	-    	4 bytes
+long -		8 bytes
+float -	    4 bytes
+double -	8 bytes
+char -		2 bytes
+boolean -	1 bit
+
+
+Example:
+
+public class PrimitiveExample {
+    public static void main(String[] args) {
+        int num = 10;
+        double price = 99.99;
+        boolean isJavaFun = true;
+        
+        System.out.println(num);
+        System.out.println(price);
+        System.out.println(isJavaFun);
+    }
+}
+
+
+
+Non-primitive data types -
+Reference types store the memory address (reference) of an object instead of actual values.
+Common reference types include:
+
+Strings (String)
+Arrays (int[], String[])
+Classes & Objects
+Interfaces
+Example:
+
+
+public class ReferenceExample {
+    public static void main(String[] args) {
+        String name = "Alice";
+        int[] numbers = {1, 2, 3, 4};
+        
+        System.out.println(name);
+        System.out.println(numbers[0]);
+    }
+}
+
+
+
+- Primitive types store direct values and are faster.
+- Non-primitive types store references and offer more flexibility.
+- Use primitive types for basic data and non-primitive types for complex structures like objects, arrays, and strings.
+
+
+
