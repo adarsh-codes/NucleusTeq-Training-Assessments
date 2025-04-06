@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HR PORTAL</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="containerLog">
+      <div class="form-wrapper">
+        <h2 id="form-title">Login</h2>
+
+        <form id="login-form" class="form active">
+          <div class="form__group">
+            <label for="login-email">Email</label>
+            <input type="email" id="login-email" name="email" required />
+          </div>
+          <div class="form__group">
+            <label for="login-password">Password</label>
+            <input
+              type="password"
+              id="login-password"
+              name="password"
+              required
+            />
+          </div>
+          <button type="submit" class="login-btn">Login</button>
+        </form>
+
+        <form id="signup-form" class="form">
+          <div class="form__group">
+            <label for="signup-name">Full Name</label>
+            <input type="text" id="signup-name" name="name" required />
+          </div>
+          <div class="form__group">
+            <label for="signup-email">Email</label>
+            <input type="email" id="signup-email" name="email" required />
+          </div>
+          <div class="form__group">
+            <label for="signup-password">Password</label>
+            <input
+              type="password"
+              id="signup-password"
+              name="password"
+              required
+            />
+            <button id="showPass">Show Password</button>
+          </div>
+          <button type="submit" class="signup-btn">Sign Up</button>
+        </form>
+
+        <p class="toggle-text">
+          Don't have an account?
+          <a href="#" id="toggle-link">Sign Up</a>
+        </p>
+      </div>
+    </div>
+
+    <div id="dashboard">
+      <nav>
+        <ul>
+          <li>HR PORTAL</li>
+        </ul>
+      </nav>
+
+      <div class="container">
+        <h2>Add Employee</h2>
+        <form id="employeeForm">
+          <input type="number" id="empid" placeholder="EmpId" required />
+          <input type="text" id="name" placeholder="Name" required />
+          <input type="text" id="dept" placeholder="Department" required />
+          <input type="number" id="salary" placeholder="Salary" required />
+          <input type="email" id="email" placeholder="Email" required />
+          <button onclick="addemp(event)">Add Employee</button>
+        </form>
+
+        <h2>Employee List</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Department</th>
+              <th>Salary</th>
+              <th>Email</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="employeeTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div id="editOverlay">
+      <div id="editFormContainer">
+        <h3>Edit Employee</h3>
+        <form id="editEmployeeForm">
+          <input type="hidden" id="edit-id" />
+
+          <div style="margin-bottom: 10px">
+            <label for="edit-name">Name:</label>
+            <input type="text" id="edit-name" required />
+          </div>
+
+          <div style="margin-bottom: 10px">
+            <label for="edit-dept">Department:</label>
+            <input type="text" id="edit-dept" required />
+          </div>
+
+          <div style="margin-bottom: 10px">
+            <label for="edit-salary">Salary:</label>
+            <input type="number" id="edit-salary" required />
+          </div>
+
+          <div style="margin-bottom: 10px">
+            <label for="edit-email">Email:</label>
+            <input type="email" id="edit-email" required />
+          </div>
+
+          <button
+            onclick="saveEmp(event)"
+            style="
+              background-color: #007bff;
+              color: white;
+              border: none;
+              padding: 8px 15px;
+              border-radius: 6px;
+            "
+          >
+            Update
+          </button>
+          <button
+            type="button"
+            onclick="cancelEdit()"
+            style="
+              margin-left: 10px;
+              background-color: gray;
+              color: white;
+              border: none;
+              padding: 8px 15px;
+              border-radius: 6px;
+            "
+          >
+            Cancel
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
