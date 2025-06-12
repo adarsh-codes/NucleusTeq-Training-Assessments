@@ -1,0 +1,6 @@
+This is going to be copied into file.txtabcdabcdabcd
+newline 2
+newline 3 
+newline 5
+newline 6
+newline 9newline 9ne 9

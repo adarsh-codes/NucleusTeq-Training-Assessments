@@ -1,0 +1,6 @@
+this is python.
+my name is adarsh.
+hello.
+yeah.
+yo
+Hello from context managerHello from context manager
