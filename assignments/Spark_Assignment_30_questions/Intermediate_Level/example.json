@@ -1,0 +1,30 @@
+[{
+    "name": "example",
+    "version": "1.0",
+    "description": "An example JSON file for Spark assignment.",
+    "data": [
+        {
+            "id": 1,
+            "value": "example_value_1"
+        },
+        {
+            "id": 2,
+            "value": "example_value_2"
+        }
+    ]
+},
+{
+    "name": "example2",
+    "version": "1.5",
+    "description": "Another example JSON file for Spark assignment.",
+    "data": [
+        {
+            "id": 3,
+            "value": "example_value_3"
+        },
+        {
+            "id": 4,
+            "value": "example_value_4"
+        }
+    ]
+}]

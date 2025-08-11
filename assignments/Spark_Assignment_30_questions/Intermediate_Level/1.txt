@@ -1,0 +1,4 @@
+Hello, this is the
+first program of Spark.
+I have to read this file using Spark in the python language.
+This is part of my assignment.
