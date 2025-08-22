@@ -1,6 +1,6 @@
 # Nucleusteq Training
 
-###This Repository contains all the Assignments for the training requirements at Nucleusteq.
+This Repository contains all the Assignments for the training requirements at Nucleusteq.
 
 ## CAPSTONE PROJECT 1 :-  [TASK_MANAGEMENT_SYSTEM](https://github.com/adarsh-codes/TASK-MANAGEMENT-SYSTEM)
 
